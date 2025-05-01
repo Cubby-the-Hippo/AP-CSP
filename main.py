@@ -10,6 +10,7 @@ MOLE_INTERVAL = 600
 EASY = 1000
 MEDIUM = 600
 HARD = 300
+IMPOSSIBLE = 100
 TIME_LIMIT = 30
 
 # Global state
@@ -61,6 +62,7 @@ def master_timer():
         end_game()
 
 # Show mole randomly
+
 def mole_appear():
     for spot in mole_spots:
         spot.config(image=red_circle_image)
@@ -123,6 +125,7 @@ Label(menu_frame, text="Select Difficulty", font=('Arial', 20)).pack(pady=10)
 Button(menu_frame, text="Easy", command=lambda: set_difficulty_and_start(EASY, "Easy")).pack(pady=5)
 Button(menu_frame, text="Medium", command=lambda: set_difficulty_and_start(MEDIUM, "Medium")).pack(pady=5)
 Button(menu_frame, text="Hard", command=lambda: set_difficulty_and_start(HARD, "Hard")).pack(pady=5)
+Button(menu_frame, text="Impossible", command=lambda: set_difficulty_and_start(IMPOSSIBLE, "Impossible")).pack(pady=5)
 Button(menu_frame, text="Instructions", command=show_instructions).pack(pady=10)
 Button(menu_frame, text="Quit", command=quit_game).pack(pady=20)
 menu_frame.pack(fill=BOTH, expand=True)
